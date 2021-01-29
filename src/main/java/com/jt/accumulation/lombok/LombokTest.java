@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
  */
 @Slf4j
 public class LombokTest {
+
     @Test
     public void lombokTest(){
        LombokEntity entity = new LombokEntity();
@@ -23,4 +24,6 @@ public class LombokTest {
         LombokEntity entity = LombokEntity.newInstance("lombok").setName("lombok2").setType(2);
         log.info("lombok的名字：{}，属性：{}",entity.getName(),entity.getType());
     }
+
+
 }
