@@ -18,6 +18,7 @@ public @interface MyAnnotation {
     String[] stringArrValue();
     MyAnnotation2 annotationValue();
     CityEnum enumValue();
+
     @interface MyAnnotation2 {
     }
     enum CityEnum {
