@@ -1,10 +1,8 @@
 package com.jt.mybatisenum.enumj;
 
+import com.jt.mybatisenum.annotation.EnumValue;
 import lombok.Getter;
 
-/**
- * @author qiyu
- */
 @Getter
 public enum WeekDayEnum {
     MONDAY(1,"星期一"),
@@ -21,5 +19,6 @@ public enum WeekDayEnum {
     }
 
     private final Integer code;
+    @EnumValue
     private final String desc;
 }
