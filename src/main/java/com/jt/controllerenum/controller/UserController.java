@@ -10,18 +10,21 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @GetMapping("/get")
-    public void get(UserDTO userDTO) {
+    public UserDTO get(UserDTO userDTO) {
         log.info(userDTO.toString());
+        return userDTO;
     }
 
     @PostMapping("/postForm")
-    public void postForm(UserDTO userDTO) {
+    public UserDTO postForm(UserDTO userDTO) {
         log.info(userDTO.toString());
+        return userDTO;
     }
 
     @PostMapping("/postJson")
-    public void postJson(@RequestBody UserDTO userDTO) {
+    public UserDTO postJson(@RequestBody UserDTO userDTO) {
         log.info(userDTO.toString());
+        return userDTO;
     }
 
 }
