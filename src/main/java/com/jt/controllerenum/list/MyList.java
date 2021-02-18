@@ -24,8 +24,8 @@ public class MyList<T> {
     }
 
     public static void main(String[] args) {
-        MyList myList = new MyList();
-        myList.filter(v -> ((Integer)v) > 2);
+        MyList<Integer> myList = new MyList<>();
+        myList.filter(v -> v > 2);
         LinkedList<Integer> integerLinkedList = new LinkedList<>();
         integerLinkedList.add(123);
         integerLinkedList.add(456);
