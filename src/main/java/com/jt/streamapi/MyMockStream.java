@@ -1,7 +1,9 @@
 package com.jt.streamapi;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +17,13 @@ public class MyMockStream {
     public static void main(String[] args) {
         MyList<Person> myList =new MyList<Person>();
         myList.add(new Person(18,"jiatai"));
-        myList.add(new Person(18,"jiatai"));
-        myList.add(new Person(18,"jiatai"));
+        myList.add(new Person(20,"1jiatai"));
+        myList.add(new Person(30,"2jiatai"));
+        MyList<Person> filter = myList.filter(person -> person.getAge() > 18);
+        System.out.println(filter.list);
 
+        MyList<String> map = myList.map(Person::getName);
+        System.out.println(map.list);
     }
 
     static class MyList<E>{
@@ -27,8 +33,8 @@ public class MyMockStream {
             list.add(e);
         }
 
-        public List<E> filter(Predicate<E> filter){
-            List filteredList = new ArrayList();
+        public MyList<E> filter(Predicate<E> filter){
+            MyList<E> filteredList = new MyList<>();
             for (E e : list) {
                 if (filter.test(e)){
                     filteredList.add(e);
@@ -37,8 +43,8 @@ public class MyMockStream {
             return filteredList;
         }
 
-        public <R> List<R> map(Function<E,R> mapper){
-            List<R> mapperList = new ArrayList<>();
+        public <R> MyList<R> map(Function<E,R> mapper){
+            MyList<R> mapperList = new MyList<>();
             for (E e : list) {
                 mapperList.add(mapper.mapper(e));
             }
@@ -51,7 +57,7 @@ public class MyMockStream {
     interface Function<E,R>{
         R mapper(E e);
     }
-    @Setter
+    @Data
     @AllArgsConstructor
     static class Person{
         int age;
