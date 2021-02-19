@@ -1,4 +1,4 @@
-package com.jt.controllerenum.list;
+package com.jt.list;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
