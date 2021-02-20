@@ -1,4 +1,4 @@
-package com.jt.streamapi;
+package com.jt.javaeight.streamapi;
 
 /**
  * @author jiatai.hu

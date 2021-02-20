@@ -1,4 +1,4 @@
-package com.jt.lambda;
+package com.jt.javaeight.lambda;
 
 class A {
     public void methodA(B b) {

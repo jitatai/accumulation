@@ -1,6 +1,4 @@
-package com.jt.lambda.travel;
-
-import javax.sound.midi.Soundbank;
+package com.jt.javaeight.lambda.travel;
 
 public class ByTrain implements MyRunnable {
     @Override

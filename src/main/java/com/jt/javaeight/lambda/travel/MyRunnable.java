@@ -1,6 +1,4 @@
-package com.jt.lambda.travel;
-
-import jdk.nashorn.internal.objects.annotations.Function;
+package com.jt.javaeight.lambda.travel;
 
 /**
  * @author jiatai
