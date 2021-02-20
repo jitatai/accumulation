@@ -5,7 +5,7 @@ package com.jt.accumulation.generic;
  * @version 1.0
  * @date 2021/2/1 16:33
  */
-public class ArrayList<E> {
+public class MyArrayList<E> {
     E[] array;
     private int size;
     public void add(E e) {}
