@@ -1,4 +1,4 @@
-package com.jt.lambda.travel;
+package com.jt.javaeight.lambda.travel;
 
 public class Demo {
     public static void main(String[] args) {

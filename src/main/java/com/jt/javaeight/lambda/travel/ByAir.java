@@ -1,4 +1,4 @@
-package com.jt.lambda.travel;
+package com.jt.javaeight.lambda.travel;
 
 public class ByAir implements MyRunnable {
     @Override

@@ -1,4 +1,4 @@
-package com.jt.list;
+package com.jt.javaeight.list;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

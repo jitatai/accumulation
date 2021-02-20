@@ -1,4 +1,4 @@
-package com.jt.lambda.strings;
+package com.jt.javaeight.lambda.strings;
 
 import java.util.Comparator;
 

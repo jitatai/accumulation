@@ -1,4 +1,4 @@
-package com.jt.streamapi;
+package com.jt.javaeight.streamapi;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;

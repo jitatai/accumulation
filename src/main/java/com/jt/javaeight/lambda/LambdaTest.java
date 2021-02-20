@@ -1,10 +1,8 @@
-package com.jt.lambda;
+package com.jt.javaeight.lambda;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.sound.midi.Soundbank;
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootTest
