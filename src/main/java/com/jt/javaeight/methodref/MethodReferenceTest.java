@@ -20,7 +20,7 @@ public class MethodReferenceTest {
     public static void main(String[] args) {
         System.out.println(list);
         // sort()方法是List本身就有的，主要用来排序
-        list.sort((p1, p2) -> p1.getAge() - p2.getAge());
+        list.sort(Person::compare);
         System.out.println(list);
     }
 
@@ -29,6 +29,10 @@ public class MethodReferenceTest {
     @AllArgsConstructor
     static class Person {
         private Integer age;
+
+        int compare(Person p){
+            return this.age - p.age;
+        }
     }
 
 }
