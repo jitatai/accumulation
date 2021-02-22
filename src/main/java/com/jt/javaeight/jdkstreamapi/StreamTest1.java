@@ -28,12 +28,13 @@ public class StreamTest1 {
         list.stream().filter(person -> person.getAge() > 18).map(Person::getAddress)
                 .sorted(Comparator.comparing(t -> t, Comparator.comparingInt(String::length)))
                 .collect(Collectors.toList());
-        list.stream().filter(person -> person.getAge() > 18).map(Person::getAddress)
+        list.stream().filter(person -> person.getAge() > 18).map(Person::getAge)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
-        list.stream().filter(person -> person.getAge() > 20).
-                sorted( Comparator.comparing(Person::getName,String::compareTo) .reversed() )
+        List<Person> collect = list.stream().filter(person -> person.getAge() > 18).
+                sorted(Comparator.comparing(p->p.toString(), String::compareTo).reversed())
                 .collect(Collectors.toList());
+        System.out.println(collect);
     }
 }
 
