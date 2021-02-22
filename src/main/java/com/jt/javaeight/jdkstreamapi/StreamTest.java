@@ -5,11 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toCollection;
 
 public class StreamTest {
 
@@ -42,8 +45,38 @@ public class StreamTest {
         Stream<String> nameStream = filteredByAgeStream.map(Person::getName);
         // 4.现在返回值是Stream<String>，没法直接使用，帮我收集成List<String>
         List<String> nameList = nameStream.collect(Collectors.toList());
-        
+
+        list.sort(Comparator.comparingInt(Person::getAge));
+
+        String result = list.stream().map(Person::getAddress).collect(Collectors.joining("~"));
         // 现在还对collect()为什么传递Collectors.toList()感到懵逼吗？
+
+        // 去重
+        list.stream().collect(
+                Collectors.collectingAndThen(
+                        toCollection(() -> new TreeSet<>(Comparator.comparing(Person::getName))), ArrayList::new)
+        );
+
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        List<Person> collect = list.stream().filter(p -> {
+            boolean add = seen.add(p.getAddress());
+            System.out.println(add);
+            return add;
+        }).collect(Collectors.toList());
+        System.out.println(collect);
+
+        collect = list.stream().filter(distinctByKey(Person::getAddress)).collect(Collectors.toList());
+        System.out.println(collect);
+
+    }
+
+    private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Set<Object> seen = ConcurrentHashMap.newKeySet();
+        return t -> {
+            boolean add = seen.add(keyExtractor.apply(t));
+            System.out.println(add);
+            return add;
+        };
     }
 
     @Data
