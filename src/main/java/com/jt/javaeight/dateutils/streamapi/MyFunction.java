@@ -1,4 +1,4 @@
-package com.jt.javaeight.streamapi;
+package com.jt.javaeight.dateutils.streamapi;
 
 /**
  * @author jiatai.hu

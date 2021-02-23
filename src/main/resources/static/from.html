@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>普通表单提交：默认enctype="application/x-www-form-urlencoded"</h3>
+<!--<form action="/upload" method="post">-->
+<form action="/upload" method="post" enctype="multipart/form-data">
+    用户名:<input type="text" name="name"/><br>
+    年龄:<input type="text" name="age"/><br>
+    选择文件：<input type="file" name="file"/><br>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.jt.javaeight.streamapi;
+package com.jt.javaeight.dateutils.streamapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
