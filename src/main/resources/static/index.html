@@ -21,24 +21,29 @@
         console.log(json);
     }
 </script>
+<!--
 <script src="http://localhost:8080/getUser/1"></script>
+-->
 
 </body>
 
 <script>
     function onButtonClick() {
-        $.get('http://localhost:8080/getUser/1', function (data) {
-            $('#result').val(data.name);
+        $.get('/getCodeMsg', function (data) {
+            var result = JSON.parse(data);
+            console.log(result);
+            // $('#result').val(data);
+            $('#result').val(result.Msg);
         });
 
-        // jsonP 使用ajax请求时，dataType改为jsonp即可
+/*        // jsonP 使用ajax请求时，dataType改为jsonp即可
         $.ajax({
             type: "PUT",
             url:"http://localhost:8080/getUser/1",
             success : function(data) {
                 console.log("data", data);
             }
-        });
+        });*/
 
     }
 </script>
