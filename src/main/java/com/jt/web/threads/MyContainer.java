@@ -1,6 +1,7 @@
 package com.jt.web.threads;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -65,6 +66,10 @@ public class MyContainer<T> {
         }
         new Thread(()->container.get()).start();
         new Thread(()->container.put("")).start();
+        List list = null;
+        list.stream().map((v)->{
+            return 1;
+        });
     }
 
 }
