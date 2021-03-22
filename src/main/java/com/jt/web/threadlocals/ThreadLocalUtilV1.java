@@ -30,6 +30,10 @@ public class ThreadLocalUtilV1 {
        map.put(key,value);
     }
 
+    public static void main(String[] args) {
+
+    }
+
     public static Object get(String key){
         return getThreadLocal().get().get(key);
     }
