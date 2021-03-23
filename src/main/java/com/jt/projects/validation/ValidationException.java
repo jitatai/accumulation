@@ -41,7 +41,7 @@ public class ValidationException extends RuntimeException {
         /*super(ValidationExceptionEnum.ofCode(enumCode).getDesc());
         this.code = ValidationExceptionEnum.ofCode(enumCode).getCode();
         this.originException = originException;*/
-        this(ValidationExceptionEnum.ofCode(enumCode).getCode(),ValidationExceptionEnum.ofCode(enumCode).getDesc(),originException);
+        this(enumCode,ValidationExceptionEnum.ofCode(enumCode).getDesc(),originException);
     }
 
     /**
@@ -59,7 +59,7 @@ public class ValidationException extends RuntimeException {
     }
 
     public ValidationException(String message){
-        this(ValidationExceptionEnum.ERROR_PARAM.getCode(),ValidationExceptionEnum.ERROR_PARAM.getDesc(),null);
+        this(ValidationExceptionEnum.ERROR_PARAM.getCode(),message,null);
     }
 
     @Override
