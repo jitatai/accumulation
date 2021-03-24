@@ -1,5 +1,8 @@
-package com.jt.projects.validation;
+package com.jt.projects.globalexceptionhandle;
 
+import com.jt.projects.exceptionhandler.exception.BizException;
+import com.jt.projects.exceptionhandler.results.Result;
+import com.jt.projects.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
@@ -14,6 +17,8 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+
 
     /**
      * ValidationException 异常处理
@@ -66,6 +71,11 @@ public class GlobalExceptionHandler {
         return message;
     }
 
+    @ExceptionHandler(BizException.class)
+    public <T> Result<T> handleBizException(BizException e){
+        log.warn("业务异常：{}",e.getMessage(),e);
+        return Result.error(e.getResponseEnum());
+    }
 
 
 
