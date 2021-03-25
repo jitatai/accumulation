@@ -1,6 +1,5 @@
 package com.jt.projects.entitylayering.service.impl;
 
-import com.jt.projects.entitylayering.dao.UserMapper;
 import com.jt.projects.entitylayering.entity.dos.DepartmentDO;
 import com.jt.projects.entitylayering.entity.dos.UserDO;
 import com.jt.projects.entitylayering.entity.dtos.UserDTO;
@@ -10,7 +9,6 @@ import com.jt.projects.entitylayering.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -22,8 +20,7 @@ import java.util.Optional;
  */
 @Service
 public class UserServiceImpl implements UserService {
-    @Resource
-    private UserMapper userMapper;
+
     @Override
     public UserVO getUserById(UserDTO userDTO) {
         List<UserDO> userDOList = Arrays.asList(new UserDO(1L,"jiatai",new DepartmentDO(1L,"资管")));
