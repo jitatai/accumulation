@@ -13,7 +13,7 @@ package com.jt.projects.results;
 
 import com.jt.projects.validation.ValidationExceptionEnum;
 import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.junit.platform.commons.util.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
