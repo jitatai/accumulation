@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 @Getter
 public enum  ValidationExceptionEnum {
-    NOT_FOUND(404,"找不到资源异常"),
+    NOT_FOUND(404,"找不到资源异常"),SUCCESS(200,"操作成功"),
     ERROR_PARAM(10000,"错误参数异常");
 
     ValidationExceptionEnum(int code,String desc){
