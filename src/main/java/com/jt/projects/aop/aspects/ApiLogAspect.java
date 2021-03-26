@@ -25,9 +25,11 @@ import java.util.Arrays;
 @Slf4j
 public class ApiLogAspect {
     /**
-     * 切点表达式 表示com.jt.projects下所有方法都需要增强（public）
+     * 切点表达式 类或方法上由ApiLog 且没有Ignore注解的
      */
-    @Pointcut("execution(* com.jt.projects.aop.controllers.*.* (..))")
+    @Pointcut("( @annotation(com.jt.projects.aop.annations.ApiLog) " +
+            "|| @within(com.jt.projects.aop.annations.ApiLog) ) " +
+            "&& !@annotation(com.jt.projects.aop.annations.IgnoreApiLog)")
     public void pointCut(){}
 
     @Autowired
