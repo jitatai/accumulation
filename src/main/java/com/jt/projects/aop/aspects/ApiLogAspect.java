@@ -9,7 +9,10 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
@@ -53,10 +56,16 @@ public class ApiLogAspect {
         }
         logEntity.setRemoteAddress("远程调用接口："+ xff);
 
+        String queryParam = "";
+        Object[] objects = Arrays.stream(joinPoint.getArgs()).filter(arg -> !(arg instanceof ServletRequest ||
+                arg instanceof ServletResponse ||
+                arg instanceof MultipartFile)).toArray();
+        queryParam = objectMapper.valueToTree(objects).toPrettyString();
         if ("GET".equals(request.getMethod())){
-            String queryString = request.getQueryString();
+            queryParam = request.getQueryString();
         }
-        Arrays.stream(joinPoint.getArgs());
+
+        logEntity.setRequestArgs(queryParam);
 
         Object proceed = null;
         try {
@@ -65,8 +74,9 @@ public class ApiLogAspect {
             logEntity.setTimeConsuming(System.currentTimeMillis() - startTime);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            log.info("");
+            log.info("异常信息：{}", throwable.getMessage());
         }
+        log.info("日志信息为：{}",logEntity);
         return proceed;
     }
 

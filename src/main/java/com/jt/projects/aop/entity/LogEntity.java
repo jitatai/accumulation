@@ -2,8 +2,6 @@ package com.jt.projects.aop.entity;
 
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * @author jiatai.hu
  * @version 1.0
@@ -14,6 +12,6 @@ public class LogEntity {
     private Long timeConsuming;
     private String url;
     private String methodName;
-    private List<Object> requestParamList;
+    private String requestArgs;
     private String remoteAddress;
 }

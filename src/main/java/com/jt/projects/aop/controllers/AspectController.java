@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AspectController {
     @RequestMapping("aspect")
-    public Object aspect(){
+    public Object aspect(String userName){
         for (int i = 0; i < 1000; i++) {
             int j = i;
         }
-        return "nihao";
+        return userName + ":nihao";
     }
 }
