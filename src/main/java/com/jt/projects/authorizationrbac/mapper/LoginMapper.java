@@ -1,7 +1,7 @@
-package com.jt.projects.authorizationrabc.mapper;
+package com.jt.projects.authorizationrbac.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jt.projects.authorizationrabc.entity.User;
+import com.jt.projects.authorizationrbac.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

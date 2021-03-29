@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.annotation;
+package com.jt.projects.authorizationrbac.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

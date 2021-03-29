@@ -1,6 +1,6 @@
-package com.jt.projects.authorizationrabc.exception;
+package com.jt.projects.authorizationrbac.exception;
 
-import com.jt.projects.authorizationrabc.enums.ExceptionCodeEnum;
+import com.jt.projects.authorizationrbac.enums.ExceptionCodeEnum;
 import lombok.Getter;
 
 /**

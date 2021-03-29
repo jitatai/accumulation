@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.constant;
+package com.jt.projects.authorizationrbac.constant;
 
 public abstract class WebConstant {
 

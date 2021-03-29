@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.enums;
+package com.jt.projects.authorizationrbac.enums;
 
 import lombok.Getter;
 

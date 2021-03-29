@@ -1,15 +1,15 @@
-package com.jt.projects.authorizationrabc.controller;
+package com.jt.projects.authorizationrbac.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.jt.projects.authorizationrabc.annotation.LoginRequired;
-import com.jt.projects.authorizationrabc.annotation.PermissionRequired;
-import com.jt.projects.authorizationrabc.constant.WebConstant;
-import com.jt.projects.authorizationrabc.entity.User;
-import com.jt.projects.authorizationrabc.enums.Logical;
-import com.jt.projects.authorizationrabc.enums.UserType;
-import com.jt.projects.authorizationrabc.mapper.LoginMapper;
+import com.jt.projects.authorizationrbac.annotation.LoginRequired;
+import com.jt.projects.authorizationrbac.annotation.PermissionRequired;
+import com.jt.projects.authorizationrbac.constant.WebConstant;
+import com.jt.projects.authorizationrbac.entity.User;
+import com.jt.projects.authorizationrbac.enums.Logical;
+import com.jt.projects.authorizationrbac.enums.UserType;
+import com.jt.projects.authorizationrbac.mapper.LoginMapper;
 import com.jt.projects.exceptionhandler.results.Result;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

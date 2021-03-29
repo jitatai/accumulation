@@ -1,7 +1,7 @@
-package com.jt.projects.authorizationrabc.annotation;
+package com.jt.projects.authorizationrbac.annotation;
 
-import com.jt.projects.authorizationrabc.enums.Logical;
-import com.jt.projects.authorizationrabc.enums.UserType;
+import com.jt.projects.authorizationrbac.enums.Logical;
+import com.jt.projects.authorizationrbac.enums.UserType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

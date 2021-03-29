@@ -77,8 +77,8 @@ public class GlobalExceptionHandler {
         return Result.error(e.getResponseEnum());
     }
 
-    @ExceptionHandler(com.jt.projects.authorizationrabc.exception.BizException.class)
-    public <T> Result<T> handleBiz(com.jt.projects.authorizationrabc.exception.BizException e){
+    @ExceptionHandler(com.jt.projects.authorizationrbac.exception.BizException.class)
+    public <T> Result<T> handleBiz(com.jt.projects.authorizationrbac.exception.BizException e){
         log.warn("业务异常：{}",e.getError().getDesc(),e);
         return Result.error(e.getError().getDesc());
     }

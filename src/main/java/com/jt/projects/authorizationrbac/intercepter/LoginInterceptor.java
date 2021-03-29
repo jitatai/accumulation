@@ -1,14 +1,14 @@
-package com.jt.projects.authorizationrabc.intercepter;
+package com.jt.projects.authorizationrbac.intercepter;
 
 
-import com.jt.projects.authorizationrabc.annotation.LoginRequired;
-import com.jt.projects.authorizationrabc.annotation.PermissionRequired;
-import com.jt.projects.authorizationrabc.constant.WebConstant;
-import com.jt.projects.authorizationrabc.entity.User;
-import com.jt.projects.authorizationrabc.enums.ExceptionCodeEnum;
-import com.jt.projects.authorizationrabc.enums.Logical;
-import com.jt.projects.authorizationrabc.enums.UserType;
-import com.jt.projects.authorizationrabc.exception.BizException;
+import com.jt.projects.authorizationrbac.annotation.LoginRequired;
+import com.jt.projects.authorizationrbac.annotation.PermissionRequired;
+import com.jt.projects.authorizationrbac.constant.WebConstant;
+import com.jt.projects.authorizationrbac.entity.User;
+import com.jt.projects.authorizationrbac.enums.ExceptionCodeEnum;
+import com.jt.projects.authorizationrbac.enums.Logical;
+import com.jt.projects.authorizationrbac.enums.UserType;
+import com.jt.projects.authorizationrbac.exception.BizException;
 import com.jt.web.request.threads.ThreadLocalUtilV4;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;

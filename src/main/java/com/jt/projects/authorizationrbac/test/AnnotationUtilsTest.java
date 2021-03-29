@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.test;
+package com.jt.projects.authorizationrbac.test;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.AnnotationUtils;

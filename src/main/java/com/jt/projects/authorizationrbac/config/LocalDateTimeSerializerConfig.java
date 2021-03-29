@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.config;
+package com.jt.projects.authorizationrbac.config;
 
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

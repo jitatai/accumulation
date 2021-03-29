@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.enums;
+package com.jt.projects.authorizationrbac.enums;
 
 /**
  * 通用错误枚举

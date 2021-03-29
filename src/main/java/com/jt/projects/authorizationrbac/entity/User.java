@@ -1,4 +1,4 @@
-package com.jt.projects.authorizationrabc.entity;
+package com.jt.projects.authorizationrbac.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;

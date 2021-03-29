@@ -1,6 +1,6 @@
 package com.jt.web.config;
 
-import com.jt.projects.authorizationrabc.intercepter.LoginInterceptor;
+import com.jt.projects.authorizationrbac.intercepter.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
