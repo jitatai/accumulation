@@ -13,7 +13,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @EnableTimeLog
 @EnableLogRecord
 @EnableUserLog
-@MapperScan("com.jt.projects.aop.dao")
+@MapperScan("com.jt.projects")
 public class AccumulationApplication {
 
     public static void main(String[] args) {
