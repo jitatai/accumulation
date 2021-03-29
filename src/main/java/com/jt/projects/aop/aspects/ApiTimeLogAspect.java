@@ -13,7 +13,7 @@ import org.aspectj.lang.annotation.Pointcut;
  */
 @Aspect
 @Slf4j
-public class APITimeLogAspect {
+public class ApiTimeLogAspect {
     // 编写切面类 编写了@EnableTimeLog注解 将切面类加载进spring容器 把注解放在启动类上
     // 第二步 编写切点表达式
 

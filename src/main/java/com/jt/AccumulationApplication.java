@@ -2,6 +2,7 @@ package com.jt;
 
 import com.jt.projects.aop.annations.EnableLogRecord;
 import com.jt.projects.aop.annations.EnableTimeLog;
+import com.jt.projects.aop.annations.EnableUserLog;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +12,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @ServletComponentScan
 @EnableTimeLog
 @EnableLogRecord
-@MapperScan("com.jt.mybatisenum.dao")
+@EnableUserLog
+@MapperScan("com.jt.projects.aop.dao")
 public class AccumulationApplication {
 
     public static void main(String[] args) {

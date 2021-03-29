@@ -1,6 +1,6 @@
 package com.jt.projects.aop.annations;
 
-import com.jt.projects.aop.aspects.ApiTimeLogAspect;
+import com.jt.projects.aop.aspects.ApiUserLogAspect;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.TYPE,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Import(ApiTimeLogAspect.class)
-public @interface EnableTimeLog {
+@Import(ApiUserLogAspect.class)
+public @interface EnableUserLog {
 
 }
