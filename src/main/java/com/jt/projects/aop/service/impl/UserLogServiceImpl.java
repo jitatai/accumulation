@@ -4,9 +4,9 @@ import com.jt.projects.aop.dao.UserLogMapper;
 import com.jt.projects.aop.entity.dos.UserLogDO;
 import com.jt.projects.aop.entity.dto.UserLogDTO;
 import com.jt.projects.aop.service.UserLogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author jiatai.hu
@@ -14,10 +14,11 @@ import javax.annotation.Resource;
 @Service
 public class UserLogServiceImpl implements UserLogService {
 
-    @Resource
+    @Autowired
     private UserLogMapper userLogMapper;
 
     @Override
+    @Transactional
     public Boolean addSysLog(UserLogDTO userLogDTO) {
         UserLogDO userLogDO = new UserLogDO();
         userLogDO.setModuleCode(userLogDTO.getModuleCode());

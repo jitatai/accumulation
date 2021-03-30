@@ -3,10 +3,9 @@ package com.jt.accumulation;
 import com.jt.projects.aop.entity.dto.UserLogDTO;
 import com.jt.projects.aop.service.UserLogService;
 import org.junit.jupiter.api.Test;
-import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
 import java.util.Date;
 
 /**
@@ -15,9 +14,8 @@ import java.util.Date;
  * @date 2021/3/26 11:15
  */
 @SpringBootTest
-@MapperScan("com.jt.projects.aop.dao")
 public class MybatisPlusTest {
-    @Resource
+    @Autowired
     private UserLogService userLogService;
 
 
@@ -31,6 +29,11 @@ public class MybatisPlusTest {
         userLogDTO.setTitle("321");
         userLogDTO.setOperatorId(21L);
         userLogDTO.setType(1);
-        userLogService.addSysLog(userLogDTO);
+        for (int i = 0; i < 5; i++) {
+            if (i==3){
+                throw new RuntimeException("ceshi");
+            }
+            userLogService.addSysLog(userLogDTO);
+        }
     }
 }
