@@ -3,6 +3,7 @@ package com.jt.projects.authorizationrbac.entity.rbac;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -13,6 +14,7 @@ import java.util.Date;
  */
 @TableName("t_permission")
 @Getter
+@Setter
 public class Permission {
     private Long id;
     private String module;

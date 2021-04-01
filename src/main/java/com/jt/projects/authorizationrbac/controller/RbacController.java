@@ -3,6 +3,7 @@ package com.jt.projects.authorizationrbac.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.jt.projects.authorizationrbac.annotation.PermissionRequired;
 import com.jt.projects.authorizationrbac.constant.WebConstant;
 import com.jt.projects.authorizationrbac.entity.rbac.Permission;
 import com.jt.projects.authorizationrbac.entity.rbac.Role;
@@ -11,10 +12,7 @@ import com.jt.projects.authorizationrbac.entity.rbac.User;
 import com.jt.projects.authorizationrbac.mapper.rbac.*;
 import com.jt.projects.exceptionhandler.results.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -59,6 +57,12 @@ public class RbacController {
         // 记录当前用户 拥有的权限
         session.setAttribute(WebConstant.USER_PERMISSIONS,getUserPermissions(user.getId()));
         return Result.success(userList.get(0));
+    }
+
+    @PermissionRequired
+    @GetMapping("/needPermission")
+    public Result<String> needPermission() {
+        return Result.success("if you see this, you has the permission.");
     }
 
     /**

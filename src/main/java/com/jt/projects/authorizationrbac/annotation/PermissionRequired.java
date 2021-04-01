@@ -28,5 +28,5 @@ public @interface PermissionRequired {
      *
      * @return
      */
-    Logical logical();
+    Logical logical() default Logical.OR;
 }

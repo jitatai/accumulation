@@ -1,6 +1,6 @@
 package com.jt.projects.aop.service.impl;
 
-import com.jt.projects.aop.dao.UserLogMapper;
+import com.jt.projects.aop.mapper.UserLogMapper;
 import com.jt.projects.aop.entity.dos.UserLogDO;
 import com.jt.projects.aop.entity.dto.UserLogDTO;
 import com.jt.projects.aop.service.UserLogService;

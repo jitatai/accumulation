@@ -1,6 +1,6 @@
 package com.jt.web.config;
 
-import com.jt.projects.authorizationrbac.intercepter.LoginInterceptor;
+import com.jt.projects.authorizationrbac.intercepter.SecurityInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class InterceptorConfig extends WebMvcConfigurerAdapter {//继承WebMvcConfigurerAdapter
     @Override
     public void addInterceptors(InterceptorRegistry registry) {//重写WebMvcConfigurerAdapter中的addInterceptors方法
-        registry.addInterceptor(new LoginInterceptor())//new MyInter1()是我们自定义的拦截器类对象
+        registry.addInterceptor(new SecurityInterceptor())//new MyInter1()是我们自定义的拦截器类对象
                 .addPathPatterns("/**")//  /*代表拦截所有请求。动态参数，多个参数以逗号隔开
                 .excludePathPatterns("/insert");//不拦截/inser这个请求。这也是个动态参数，有多个不拦截的请求时，以逗号隔开
         super.addInterceptors(registry);

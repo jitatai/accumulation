@@ -1,6 +1,7 @@
 package com.jt.projects.authorizationrbac.intercepter;
 
 import com.jt.projects.authorizationrbac.annotation.LoginRequired;
+import com.jt.projects.authorizationrbac.annotation.PermissionRequired;
 import com.jt.projects.authorizationrbac.constant.WebConstant;
 import com.jt.projects.authorizationrbac.entity.rbac.User;
 import com.jt.projects.authorizationrbac.enums.ExceptionCodeEnum;
@@ -11,10 +12,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.lang.reflect.Method;
+import java.util.Set;
 
 /**
  * @author jiatai.hu
@@ -23,8 +26,11 @@ import java.lang.reflect.Method;
  */
 @Component
 public class SecurityInterceptor extends HandlerInterceptorAdapter {
+    @Resource
+    HttpSession session;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        session = request.getSession();
         // 不拦截跨域相关
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
             return true;
@@ -48,13 +54,25 @@ public class SecurityInterceptor extends HandlerInterceptorAdapter {
         }
         if (handler instanceof HandlerMethod){
             HandlerMethod handlerMethod = (HandlerMethod) handler;
+            Method method = handlerMethod.getMethod();
+            Class<?> controllerClass = handlerMethod.getBeanType();
+            String methodName = controllerClass.getName()+ "#" + method.getName();
+
+            Set<String> permissions = (Set<String>) session.getAttribute(WebConstant.USER_PERMISSIONS);
+            if (permissions.contains(methodName)){
+                return;
+            }
+            throw new BizException(ExceptionCodeEnum.PERMISSION_DENY);
         }
     }
 
     private boolean isPermissionFree(Object handler) {
         if (handler instanceof HandlerMethod){
             HandlerMethod handlerMethod = (HandlerMethod) handler;
-            handlerMethod.getBeanType();
+            Class<?> controllerClass = handlerMethod.getBeanType();
+            PermissionRequired controllerAnnotation = AnnotationUtils.findAnnotation(controllerClass, PermissionRequired.class);
+            PermissionRequired methodAnnotation = AnnotationUtils.getAnnotation(handlerMethod.getMethod(), PermissionRequired.class);
+            return controllerAnnotation == null && methodAnnotation == null;
         }
         return true;
     }
