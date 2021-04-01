@@ -1,4 +1,4 @@
-package com.jt.accumulation;
+package com.jt.accumulation.practice;
 
 import com.jt.projects.aop.entity.dto.UserLogDTO;
 import com.jt.projects.aop.service.UserLogService;

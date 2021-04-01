@@ -1,4 +1,4 @@
-package com.jt.accumulation;
+package com.jt.accumulation.practice;
 
 import com.jt.mybatisenum.dao.UserMapper;
 import com.jt.mybatisenum.entity.UserDO;
