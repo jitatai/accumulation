@@ -40,7 +40,7 @@ public class PermissionMethodCollectionListener implements  ApplicationContextAw
         beanMap.values().forEach(bean->{
             Class<?> beanClass = bean.getClass();
             Predicate<Method> filter = AnnotationUtils.findAnnotation(beanClass, PermissionRequired.class) != null ?
-                    this::isApiMehod : this::isPermissionMethod;
+                    this::isApiMethod : this::isPermissionMethod;
 
             Set<String> permissionMethods = Arrays
                     .stream(beanClass.getDeclaredMethods())
@@ -70,7 +70,7 @@ public class PermissionMethodCollectionListener implements  ApplicationContextAw
                 AnnotationUtils.findAnnotation(method,PermissionRequired.class) !=null;
     }
 
-    private boolean isApiMehod(Method method) {
+    private boolean isApiMethod(Method method) {
         return AnnotationUtils.findAnnotation(method, RequestMapping.class) != null;
     }
 
