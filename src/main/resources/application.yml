@@ -8,6 +8,13 @@ spring:
     password: xpar
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  redis:
+    host: localhost
+    password: xpar
+    database: 1
+    connect-timeout: 1000
+    port: 6379
+
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
   configuration:
